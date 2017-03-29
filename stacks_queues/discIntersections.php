@@ -1,5 +1,7 @@
-// you can write to stdout for debugging purposes, e.g.
-// print "this is a debug message\n";
+<?php
+
+# This solution is partial and wrong, i still did some serious debugging in the codility tool and forgot to pick
+# the final result :P
 
 function solution($A) {
     $return = 0;
@@ -16,16 +18,9 @@ function solution($A) {
     sort($left);
     sort($right);
     
-    var_dump($left);
-    var_dump($right);
-    
     for($i=0; $i<$N-1; $i++) {
         $val = $left[$i];
         $pos = binary_search($val, $right);
-        var_dump($val);
-        var_dump($pos);
-        var_dump($N - $pos - 1);
-        print "---\n\n";
         $return += $N - $pos - 1;
     }
     
